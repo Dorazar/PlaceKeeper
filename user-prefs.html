@@ -6,10 +6,24 @@
     <title>User Prefernce</title>
 </head>
 <body>
-    <form id="frmRegister" onsubmit="sumbit(event)">
-        
+    <header>
+        <nav>
+            <a href="./index.html">Home</a>&nbsp;&nbsp;<a href="./Places.html">Places</a>
+        </nav>
+    </header>
+    <form id="frmRegister" onsubmit="onSubmit(event)">
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" autocomplete="off">
+        </div>
 
+        <div>
+            <label for="txtColor">Set Text Color</label>
+            <input type="color" name="txtColor">
+        </div>
+       
 
+        <button>set</button>
     </form>
         <script src="./placeService.js"></script>
         <script src="./userService.js"></script>
