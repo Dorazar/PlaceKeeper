@@ -3,49 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css">
     <title>User Prefernce</title>
   </head>
   <body>
     <header>
-      <nav><a href="./index.html">Home</a>&nbsp;&nbsp;<a href="./Places.html">Places</a></nav>
+      <a href="./index.html">Home</a>&nbsp;&nbsp;<a href="./user-prefs.html">User Preference</a>&nbsp;&nbsp;<a href="./Places.html">Places</a>
     </header>
     <form id="frmRegister" onsubmit="onSubmit(event)">
       <div>
         <label for="email">E-mail</label>
-        <input type="email" name="email" autocomplete="off" />
+        <input type="email" id="email" name="email" autocomplete="off" />
       </div>
 
       <div>
         <label for="txtColor">Set Text Color</label>
-        <input type="color" name="txtColor" />
+        <input type="color" id="txtColor" name="txtColor" value="#FFFFFF" />
       </div>
 
       <div>
         <label for="bgColor">Set Background Color</label>
-        <input type="color" name="bgColor" />
+        <input type="color" id="bgColor" name="bgColor" value="#000000 />
       </div>
 
       <div>
         <label for="age">Age</label>
-        <input type="range" name="age" min="18" max="120" value="30" 
+        <input type="range" id="age" name="age" min="18" max="120" value="30" 
         onchange="showAge(this.value)" /> <span id="sAge">30</span>
       </div>
 
       <div>
         <label for="birthDate">Birth Date</label>
-        <input type="date" name="birthDate"/>
+        <input type="date" id="birthDate" name="birthDate"/>
       </div>
 
       <div>
         <label for="birthTime">Birth Time</label>
-        <input type="time" name="birthTime"/>
+        <input type="time" id="birthTime" name="birthTime"/>
       </div>
 
       <button>set</button>
     </form>
-    <div class="aaa"></div>
-    <script src="./placeService.js"></script>
-    <script src="./userService.js"></script>
-    <script src="./utilService.js"></script>
+
+    <script src="./service/util.service.js"></script>
+    <script src="./service/user-settings.service.js"></script>
+    <script src="./controller/user-settings.controller.js"></script>
+    <script src="./controller/Index.controller.js"></script>
   </body>
 </html>
