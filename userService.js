@@ -25,6 +25,15 @@ function onSubmit(ev) {
 
   //   console.log(user)
   saveToLocalStorage('userData', user)
-  var res = loadFromLocalStorage('userData')
-  console.log(res)
+  setColors()
+}
+
+function setColors() {
+  const userData = loadFromLocalStorage('userData')
+  document.querySelector('body').style.backgroundColor = userData.bgColor
+  document.querySelector('body').style.color = userData.txtColor
+}
+
+function showAge(value) {
+  document.querySelector('#sAge').innerHTML = value
 }

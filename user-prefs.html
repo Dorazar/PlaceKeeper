@@ -27,7 +27,8 @@
 
       <div>
         <label for="age">Age</label>
-        <input type="range" name="age" min="18" max="120" value="30" />
+        <input type="range" name="age" min="18" max="120" value="30" 
+        onchange="showAge(this.value)" /> <span id="sAge">30</span>
       </div>
 
       <div>
