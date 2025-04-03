@@ -1,20 +1,20 @@
 'use strict'
 function onIndexInit() {
-    const userData = loadFromLocalStorage('userData')
-    console.log(userData)
-    if (!userData) return 
-    
-    const  {txtColor, bgColor, birthDate, birthTime } = userData
-    renderColors(txtColor,bgColor)
+  const userData = loadUserData()
+  if (!userData) return
+
+  const { txtColor, bgColor, birthDate, birthTime } = userData
+  renderColors(txtColor, bgColor)
+  renderBirthDateAndBirthTime(birthDate, birthTime)
 }
 
-function renderColors(txtColor,bgColor) {
-   
-document.querySelector('body').style.backgroundColor = bgColor
+function renderColors(txtColor, bgColor) {
+  document.querySelector('body').style.backgroundColor = bgColor
   document.querySelector('body').style.color = txtColor
 }
 
-
-function showAge(value) {
-    document.querySelector('#sAge').innerHTML = value
-  }
+function renderBirthDateAndBirthTime(birthDate, birthTime) {
+  if (!birthDate || !birthTime) return
+  document.querySelector('.birthDate').innerHTML = birthDate
+  document.querySelector('.birthTime').innerHTML = birthTime
+}
