@@ -6,7 +6,7 @@ function onSubmit(ev) {
   // console.dir(ev.target)
   const { email, txtColor, bgColor, age, birthDate, birthTime } = ev.target
 
-  const user = { 
+  const user = {
     email: email.value,
     txtColor: txtColor.value,
     bgColor: bgColor.value,
@@ -14,12 +14,11 @@ function onSubmit(ev) {
     birthDate: birthDate.value,
     birthTime: birthTime.value,
   }
-
-
-  saveToLocalStorage('userData', user)
-
+  saveUserData(user)
   renderColors(user.txtColor, user.bgColor)
   window.location = 'index.html'
 }
 
-
+function showAge(value) {
+  document.querySelector('#sAge').innerHTML = value
+}
